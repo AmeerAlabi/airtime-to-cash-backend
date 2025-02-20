@@ -12,7 +12,7 @@ app.use(cors({
 }));
 
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/airtime_to_cash";
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose
   .connect(MONGO_URI,)
@@ -29,6 +29,7 @@ const transactionSchema = new mongoose.Schema({
   bankName: String,
   accountNumber: String,
 });
+
 
 const Transaction = mongoose.model("Transaction", transactionSchema);
 
